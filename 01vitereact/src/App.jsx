@@ -1,10 +1,11 @@
-import Chai from "./chai"
-
+import Chai from "./Chai";
+import Navbar from "./Navbar";
 
 
 function App() {
   return (
-    <Chai/>
+    // <Chai/>
+    <Navbar/>
   )
 }
 

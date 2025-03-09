@@ -1,9 +1,11 @@
 import Chai from "./Chai";
+import Navbar from "./Navbar";
 
 function App() {
   return (
     <>
-    <Chai/>
+    <Navbar/>
+    {/* <Chai/> */}
    {/* <h1>Hello World!</h1>  */}
     </>
   );
