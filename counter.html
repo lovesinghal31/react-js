@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur React</h1>
+    <h2 id="countVal">Counter Value: </h2>
+    <button id="addVal">Add value</button>
+    <button id="removeVal">Remove value</button>
+    <button id="resetVal">Reset value</button>
+    <script>
+        let counter = 5;
+        let countVal = document.getElementById("countVal");
+        let addValBtn = document.getElementById("addVal");
+        let removeValBtn = document.getElementById("removeVal");
+        let resetValBtn = document.getElementById("resetVal");
+        countVal.innerHTML= `counter value: ${counter}`;
+        addValBtn.addEventListener("click",() =>{
+            if(counter<20){
+                counter++;
+                countVal.innerHTML= `counter value: ${counter}`;
+            }
+        })
+        removeValBtn.addEventListener("click",() =>{
+            if(counter>0){
+                counter--;
+                countVal.innerHTML= `counter value: ${counter}`;
+            }
+        })
+        resetValBtn.addEventListener("click",() =>{
+            counter = 0;
+            countVal.innerHTML= `counter value: ${counter}`;
+        })
+    </script>
+</body>
+</html>
