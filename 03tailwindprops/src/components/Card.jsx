@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({productName="Shoes",btnText="Buy Now"}) {
+function Card({shoesName,btnText}) {
   // console.log(props.userName);
   return (
     <div className="card bg-base-100 w-96 shadow-sm object-center">
@@ -11,7 +11,7 @@ function Card({productName="Shoes",btnText="Buy Now"}) {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{productName}</h2>
+        <h2 className="card-title">{shoesName}</h2>
         <p>
           A card component has a figure, a body part, and inside body there are
           title and actions parts
