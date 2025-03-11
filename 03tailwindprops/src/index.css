@@ -1,12 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@theme{
+  --color-mint-500: oklch(0.72 0.11 178);
+  --text-try: 3rem;
+}
 
-/* *{
-  background-color: white;
-  color: black;
-} */
 html{
   background-color: white;
-  color: black;
 }
