@@ -126,41 +126,42 @@ function App() {
 
   return (
     <>
-      <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-orange-500 bg-gray-800">
+      <div className="w-full max-w-md mx-auto shadow-md rounded-lg p-4 my-8 text-error bg-gray-800">
         <h1 className="text-white text-center py-2 my-2">Password Generator</h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4 pb-5">
           <input
             type="text"
             value={pass}
-            className="outline-none w-full py-1 px-3 bg-gray-50 rounded-l-lg"
+            className="input-error outline-none w-full py-1 px-3 bg-gray-50 rounded-lg"
             placeholder="password"
             readOnly
             ref={passwordRef}
           />
           <button
             onClick={copyPasswordToClip}
-            className="outline-none bg-blue-500 hover:bg-blue-700 active:bg-blue-900 text-white px-3 py-0.5 shrink-0 rounded-r-lg"
+            className="outline-none btn btn-error px-3 py-0.5 shrink-0 rounded-lg"
           >
             Copy
           </button>
         </div>
-        <div className="flex text-sm gap-x-2">
-          <div className="flex items-center gap-x-1">
+        <div className="flex text-sm gap-x-2 justify-between">
+          <div className="flex items-center gap-x-1 justify-between w-50">
             <input
               type="range"
               min={6}
               max={50}
               value={length}
-              className="cursor-pointer"
+              className="cursor-pointer range range-xs"
               onChange={(e) => {
                 setLength(e.target.value);
               }}
             />
-            <label>Length: {length}</label>
+            <label className="w-30">Length: {length}</label>
           </div>
           <div className="flex items-center gap-x-1">
             <input
               type="checkbox"
+              className="toggle toggle-error toggle-xs"
               defaultChecked={numAllow}
               id="numInput"
               onChange={() => {
@@ -172,6 +173,7 @@ function App() {
           <div className="flex items-center gap-x-1">
             <input
               type="checkbox"
+              className="toggle toggle-error toggle-xs"
               defaultChecked={charAllow}
               id="charInput"
               onChange={() => {

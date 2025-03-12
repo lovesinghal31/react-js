@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+@theme{
+    --container-md: 33rem;
+}
