@@ -17,9 +17,10 @@ function App() {
       <h1 className="text-mint-500 text-try animate-pulse text-center items-center flex justify-center object-center">
         Hello
       </h1>
-      {shoes.map((details,index)=>(
+      {/* {shoes.map((details,index)=>(
         <Card key={index} {...details} />
-      ))}
+      ))} */}
+      <Card shoesName="NIKE" btnText="Garib" />
     </>
   );
 }
