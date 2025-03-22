@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* used custom-variant to enable dark mode through class in html tree */
+@custom-variant dark (&:where(.dark, .dark *));
