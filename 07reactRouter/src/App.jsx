@@ -1,14 +1,33 @@
-import Footer from "./components/Footer/Footer"
-import Header from "./components/Header/Header"
-import Home from "./components/Home/Home"
-import './App.css'
-
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import Layout from './Layout.jsx'
+import Home from './components/Home/Home.jsx'
+import About from './components/About/About.jsx'
+import Contact from './components/Contact/Contact.jsx'
+import User from './components/User/User.jsx'
+import Github, { githubLoaderInfo } from './components/Github/Github.jsx'
+import NotFound from './components/NotFound/NotFound.jsx'
 function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Layout/>}>
+        <Route path='' element={<Home/>} />
+        <Route path='about' element={<About/>} />
+        <Route path='contact' element={<Contact/>} />
+        <Route path='user/:userid' element={<User/>} />
+        <Route 
+        loader={githubLoaderInfo}
+        path='github' 
+        element={<Github/>} 
+        />
+        <Route path='*' element={<NotFound />} />
+      </Route>
+    )
+  )
+
   return (
     <>
-      {/* <Header /> */}
-      <Home />
-      <Footer />
+    <RouterProvider router={router} />
     </>
   )
 }
