@@ -46,3 +46,18 @@ useEffect(() => {
 ```
 >in this `passGen();` run only when the (length,numAllow,charAllow,passGen) gets changed
 ## 6. custom hooks
+### we can create our own hooks in react 
+```javascript
+function useCurrencyInfo(currency){
+    const [data,setData] = useState({})
+    useEffect(() => {
+        fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`)
+        .then((res) => res.json())
+        .then((res) => setData(res[currency]))
+    },[currency])
+    return data;
+}
+```
+>the hook `useCurrencyInfo()` is created to fetch the data from a api accpets parameter (currency). to get the exchange rates of the currency 
+## 7. React Router
+### 
