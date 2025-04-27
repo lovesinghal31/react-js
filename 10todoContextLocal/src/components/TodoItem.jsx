@@ -37,6 +37,11 @@ function TodoItem({ todo }) {
                 onChange={(e) => setTodoMsg(e.target.value)}
                 readOnly={!isTodoEditable}
                 onClick={!isTodoEditable? toggleCompleted: "" }
+                onKeyDown={(e)=>{
+                    if(e.key === "Enter"){
+                        editTodo()
+                    }
+                }}
             />
             {/* Edit, Save Button */}
             <button
