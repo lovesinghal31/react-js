@@ -2,17 +2,15 @@ import React from "react";
 import useTheme from "../contexts/theme";
 
 export default function ThemeBtn() {
-
-    const {themeMode,darkTheme,lightTheme} = useTheme()
-    const onChangeBtn = (e) =>{
-        const darkModeStatus = e.currentTarget.checked
-        if(darkModeStatus){
-            darkTheme()
-        } else{
-            lightTheme()
-        }
+  const {themeMode,lightTheme,darkTheme} = useTheme()
+  const onChangeBtn = (e) => {
+    const darkModeStatus = e.currentTarget.checked
+    if (darkModeStatus) {
+      darkTheme()
+    } else {
+      lightTheme()
     }
-
+  }
   return (
     <label className="relative inline-flex items-center cursor-pointer">
       <input type="checkbox" value="" className="sr-only peer" onChange={onChangeBtn} checked={themeMode === "dark"} />
