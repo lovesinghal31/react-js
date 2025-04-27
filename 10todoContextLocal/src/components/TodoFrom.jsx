@@ -6,8 +6,8 @@ function TodoForm() {
     const {addTodo} = useTodo()
     const add = (e) =>{
         e.preventDefault()
-        if(!todo) return 
-        addTodo({todo,completed: false})
+        if(!todo.trim()) return 
+        addTodo({todo: todo.trim(),completed: false})
         setTodo("")
     }
 
