@@ -30,12 +30,13 @@ function TodoItem({ todo }) {
             />
             <input
                 type="text"
-                className={`border outline-none w-full bg-transparent rounded-lg ${
-                    isTodoEditable ? "border-black/10 px-2" : "border-transparent"
+                className={`border outline-none w-full bg-transparent  rounded-lg ${
+                    isTodoEditable ? "border-black/10 px-2" : "border-transparent cursor-pointer"
                 } ${todo.completed ? "line-through" : ""}`}
                 value={todoMsg}
                 onChange={(e) => setTodoMsg(e.target.value)}
                 readOnly={!isTodoEditable}
+                onClick={!isTodoEditable? toggleCompleted: "" }
             />
             {/* Edit, Save Button */}
             <button
