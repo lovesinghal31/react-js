@@ -1,21 +1,38 @@
 @import "tailwindcss";
 @plugin "daisyui";
-.completed {
+/* New Hover Effect Class */
+.hover-effect {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hover effect for tasks */
+  .hover-effect:hover {
+    background-color: rgba(240, 240, 240, 0.8); /* Light gray background for hover */
+    border-radius: 8px;
+    cursor: pointer;
+    transform: scale(1.03); /* Slight scale-up effect */
+    box-shadow: 0 2px 8px rgba(92, 184, 92, 0.1); /* Subtle soft shadow effect */
+    color: #495057; /* Darker gray for better visibility on hover */
+  }
+  
+  /* Completed task style */
+  .completed {
     position: relative;
-    color: #5cb85c; /* Soft green tone */
+    color: #495057; /* Dark muted gray for completed text */
     transition: color 0.5s ease, transform 0.5s ease, opacity 0.8s ease 0.6s;
     transform: scale(1);
     opacity: 1;
   }
   
+  /* Strike-through animation */
   .completed::after {
     content: '';
     position: absolute;
     left: 0;
     top: 50%;
-    height: 1.5px;
+    height: 2px;
     width: 0;
-    background: #5cb85c;
+    background: #495057; /* Darker gray for the strike-through line */
     transform: translateY(-50%);
     animation: strikeThrough 0.4s forwards ease-in-out;
   }
@@ -26,13 +43,13 @@
     }
   }
   
-  /* Fades after completion */
+  /* Fade effect after completing */
   .completed.fade {
-    opacity: 0.5;
+    opacity: 0.6;
     transform: scale(0.98);
   }
   
-  /* Optional: a small "Completed" badge (appears cleanly) */
+  /* Optional: "Completed" badge with tick mark */
   .completed::before {
     content: "✓";
     position: absolute;
@@ -40,27 +57,7 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
-    color: #5cb85c;
+    color: #495057; /* Dark gray for the tick mark */
     opacity: 0.8;
   }
-
-/* New Hover Effect Class */
-.hover-effect {
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-  }
-  
-  /* Hover effect for tasks */
-  .hover-effect:hover {
-    background-color: rgba(92, 184, 92, 0.1); /* Light green background */
-    border-radius: 8px;
-    cursor: pointer;
-    transform: scale(1.03); /* Slight scale up effect */
-    box-shadow: 0 2px 8px rgba(92, 184, 92, 0.3); /* Soft shadow effect */
-    color: #5cb85c; /* Keep the text color visible on hover */
-  }
-  
-  /* Specific fix for completed tasks on hover to keep color consistent */
-  .completed.hover-effect:hover {
-    color: #5cb85c; /* Ensure green text remains visible */
-  }
-  
+    
