@@ -1,1 +1,66 @@
 @import "tailwindcss";
+@plugin "daisyui";
+.completed {
+    position: relative;
+    color: #5cb85c; /* Soft green tone */
+    transition: color 0.5s ease, transform 0.5s ease, opacity 0.8s ease 0.6s;
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .completed::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 1.5px;
+    width: 0;
+    background: #5cb85c;
+    transform: translateY(-50%);
+    animation: strikeThrough 0.4s forwards ease-in-out;
+  }
+  
+  @keyframes strikeThrough {
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Fades after completion */
+  .completed.fade {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+  
+  /* Optional: a small "Completed" badge (appears cleanly) */
+  .completed::before {
+    content: "✓";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #5cb85c;
+    opacity: 0.8;
+  }
+
+/* New Hover Effect Class */
+.hover-effect {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hover effect for tasks */
+  .hover-effect:hover {
+    background-color: rgba(92, 184, 92, 0.1); /* Light green background */
+    border-radius: 8px;
+    cursor: pointer;
+    transform: scale(1.03); /* Slight scale up effect */
+    box-shadow: 0 2px 8px rgba(92, 184, 92, 0.3); /* Soft shadow effect */
+    color: #5cb85c; /* Keep the text color visible on hover */
+  }
+  
+  /* Specific fix for completed tasks on hover to keep color consistent */
+  .completed.hover-effect:hover {
+    color: #5cb85c; /* Ensure green text remains visible */
+  }
+  
